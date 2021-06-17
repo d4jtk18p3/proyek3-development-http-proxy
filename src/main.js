@@ -22,8 +22,9 @@ app.listen(PORT, () =>
 )
 
 const akunProxy = httpProxy.createProxyMiddleware({
-  target: `http://frontend.localhost:${PORT}`,
+  target: `http://localhost:14415`,
   changeOrigin: true,
+  ws: true,
   pathRewrite: {
     '^/keycloak-proxy': '/'
   },
